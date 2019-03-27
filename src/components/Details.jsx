@@ -19,33 +19,33 @@ export default class Details extends Component {
           } = ctx.detailProduct;
 
           return (
-            <div className="container py-5">
-              <div className="row">
-                <div className="col-10 mx-auto text-center text-slanted text-blue my-5">
+            <div className='container py-5'>
+              <div className='row'>
+                <div className='col-10 mx-auto text-center text-slanted text-blue my-5'>
                   <h1>{title}</h1>
                 </div>
               </div>
-              <div className="row">
-                <div className="col-10 mx-auto col-md-6 my-3">
-                  <img src={img} alt={title} className="img-fluid" />
+              <div className='row'>
+                <div className='col-10 mx-auto col-md-6 my-3'>
+                  <img src={img} alt={title} className='img-fluid' />
                 </div>
-                <div className="col-10 mx-auto col-md-6 my-3 text-capitalize">
+                <div className='col-10 mx-auto col-md-6 my-3 text-capitalize'>
                   <h2>model : {title}</h2>
-                  <h4 className="text-title text-uppercase text-muted mt-3 mb-2">
-                    made by : <span className="text-uppercase">{company}</span>
+                  <h4 className='text-title text-uppercase text-muted mt-3 mb-2'>
+                    made by : <span className='text-uppercase'>{company}</span>
                   </h4>
-                  <h4 className="text-blue">
+                  <h4 className='text-blue'>
                     <strong>
                       price: <span>$</span>
                       {price}
                     </strong>
                   </h4>
-                  <p className="text-capitalize font-weight-bold mt-3 mb-0">
+                  <p className='text-capitalize font-weight-bold mt-3 mb-0'>
                     some info about product:
                   </p>
-                  <p className="text-muted lead">{info}</p>
+                  <p className='text-muted lead'>{info}</p>
                   <div>
-                    <Link to="/">
+                    <Link to='/'>
                       <ButtonContainer>Back to products</ButtonContainer>
                     </Link>
                     <ButtonContainer
@@ -53,6 +53,7 @@ export default class Details extends Component {
                       disabled={inCart}
                       onClick={() => {
                         ctx.addToCart(id);
+                        ctx.openModal(id);
                       }}
                     >
                       {inCart ? 'inCart' : 'add to cart'}
